@@ -1,11 +1,74 @@
-### Obtener todos los contactos (Local)
+### =======================================================
+### PRUEBAS LOCALES (localhost:8080)
+### =======================================================
+
+### 1. Obtener todos los contactos (Local)
 GET http://localhost:8080/contacts
 
-### Obtener un contacto individual por ID (Local)
+### 2. Obtener un contacto individual por ID (Local)
 GET http://localhost:8080/contacts/6aa043e47801582ca37ef105
 
-### Obtener todos los contactos (Render)
+### 3. Crear un nuevo contacto (Local)
+POST http://localhost:8080/contacts HTTP/1.1
+Content-Type: application/json
+
+{
+  "firstName": "Carlos",
+  "lastName": "Mendoza",
+  "email": "cmendoza@example.com",
+  "favoriteColor": "Azul",
+  "birthday": "1998-04-12"
+}
+
+### 4. Actualizar un contacto por ID (Local)
+PUT http://localhost:8080/contacts/6aa043e47801582ca37ef105 HTTP/1.1
+Content-Type: application/json
+
+{
+  "firstName": "Carlos",
+  "lastName": "Mendoza",
+  "email": "carlos.updated@example.com",
+  "favoriteColor": "Verde",
+  "birthday": "1998-04-12"
+}
+
+### 5. Eliminar un contacto por ID (Local)
+DELETE http://localhost:8080/contacts/6aa043e47801582ca37ef105 HTTP/1.1
+
+
+### =======================================================
+### PRUEBAS EN PRODUCCIÓN (Render)
+### =======================================================
+
+### 1. Obtener todos los contactos (Render)
 GET https://cse-341-project1-xa4s.onrender.com/contacts
 
-### Obtener un contacto por ID (Render)
+### 2. Obtener un contacto por ID (Render)
 GET https://cse-341-project1-xa4s.onrender.com/contacts/6aa043e47801582ca37ef105
+
+### 3. Crear un nuevo contacto (Render)
+POST https://cse-341-project1-xa4s.onrender.com/contacts HTTP/1.1
+Content-Type: application/json
+
+{
+  "firstName": "Elena",
+  "lastName": "Rojas",
+  "email": "elena.rojas@example.com",
+  "favoriteColor": "Rojo",
+  "birthday": "2001-09-15"
+}
+
+### 4. Actualizar un contacto por ID (Render)
+PUT https://cse-341-project1-xa4s.onrender.com/contacts/6aa043e47801582ca37ef105 HTTP/1.1
+Content-Type: application/json
+
+{
+  "firstName": "Elena",
+  "lastName": "Rojas",
+  "email": "elena.updated@example.com",
+  "favoriteColor": "Amarillo",
+  "birthday": "2001-09-15"
+}
+
+### 5. Eliminar un contacto por ID (Render)
+DELETE https://cse-341-project1-xa4s.onrender.com/contacts/6aa043e47801582ca37ef105 HTTP/1.1
